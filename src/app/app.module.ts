@@ -46,6 +46,8 @@ import { FormsModule } from '@angular/forms';
         path: 'home', component: HomeComponent
       },{
         path:'usuarios/info/:id',component:CadastroComponent
+      },{
+        path:"usuario",component:CadastroComponent
       }
     ]),
     BrowserAnimationsModule

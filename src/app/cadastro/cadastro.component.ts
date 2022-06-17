@@ -14,9 +14,32 @@ export class CadastroComponent implements OnInit {
   constructor(private rotaAtiva:ActivatedRoute,private usuarioService:UsuarioService) { }
 
   ngOnInit(): void {
+    
     let valorRotaAtual = this.rotaAtiva.snapshot.paramMap.get('id') as string
-    this.usuario = this.usuarioService.pegarPorId(Number(valorRotaAtual)) as Usuario
-    console.log(this.usuario)
+    if(valorRotaAtual){
+      this.usuario = this.usuarioService.pegarPorId(Number(valorRotaAtual)) as Usuario
+      console.log(this.usuario)
+    }else{
+      this.usuario = {
+        id:this.usuarioService.novoId(),
+        primeiroNome:'',
+        sobrenome:'',
+        cep:'',
+        usuario:'',
+        senha:'',
+        endereco:'',
+        cidade:'',
+        estado:'',
+        perfil:''
+      }
+      console.table(this.usuario)
+    }
+    
+   
   }
+  salvar():void{
+   
+    this.usuarioService.salvar(this.usuario)   
+}
 
 }
