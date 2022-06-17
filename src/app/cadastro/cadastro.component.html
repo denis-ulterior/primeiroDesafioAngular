@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+<div class="container">
+    <form class="form mt-5"  *ngIf="usuario">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>ID</mat-label>
+            <input matInput disabled value="" [(ngModel)]="usuario.id" name="id">
+        </mat-form-field>
+    
+        <table class="full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Primeiro nome</mat-label>
+                        <input matInput  [(ngModel)]="usuario.primeiroNome" name="primeiroNome">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Sobrenome</mat-label>
+                        <input matInput [(ngModel)]="usuario.sobrenome" name="sobrenome">
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    
+        <p>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Endereço</mat-label>
+                <textarea matInput placeholder="Ex. Rua das tecnologias,100" [(ngModel)]="usuario.endereco" name="endereco"></textarea>
+            </mat-form-field>
+        </p>
+    
+        <table class="full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Cidade</mat-label>
+                        <input matInput placeholder="Ex. Taubaté" [(ngModel)]="usuario.cidade" name="cidade">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Estado</mat-label>
+                        <input matInput placeholder="Ex. São Paulo" [(ngModel)]="usuario.estado" name="estado">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>CEP</mat-label>
+                        <input matInput #postalCode maxlength="5" placeholder="Ex. 12000-000" value="" [(ngModel)]="usuario.cep" name="cep">
+                        <mat-hint align="end">{{postalCode.value.length}} / 9</mat-hint>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <button mat-raised-button color="primary">Salvar</button>
+        <button  mat-raised-button [routerLink]="['/home']" class="primary m-2">Voltar</button>
+    </form>
+</div>
