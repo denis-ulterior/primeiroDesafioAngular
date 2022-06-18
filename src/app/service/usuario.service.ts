@@ -1,10 +1,12 @@
 import { Injectable } from "@angular/core";
 import { Usuario } from "../Usuario/usuario";
+import { SessaoService } from "./sessao.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class UsuarioService {
+    constructor(private sessao: SessaoService) { }
     pegarTodos(): Usuario[] {
         return usuarios
     }
@@ -16,10 +18,13 @@ export class UsuarioService {
         let userValido = usuarios.find((it: Usuario) => it.usuario === usuario)
         let senhaValida = usuarios.find((it: Usuario) => it.senha === senha)
         if (userValido && senhaValida) {
-            console.log('logado')
+            this.sessao.logar(usuario, senha)
         } else {
             console.log('Erro')
         }
+    }
+    logout():void{
+        this.sessao.logOut()
     }
     pegarPorId(id: number) {
         return usuarios.find((it: Usuario) => it.id === id)

@@ -19,4 +19,7 @@ export class ListaUsuariosComponent implements OnInit {
   getUsuarios() {
     return this.usuarios
   }
+  logout():void{
+    this.usuariosService.logar
+  }
 }

@@ -20,6 +20,26 @@
                         <input matInput [(ngModel)]="usuario.sobrenome" name="sobrenome">
                     </mat-form-field>
                 </td>
+                <td>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput [(ngModel)]="usuario.usuario" name="usuario">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Perfil</mat-label>
+                        <input matInput [(ngModel)]="usuario.perfil" name="perfil">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Senha</mat-label>
+                        <input matInput [(ngModel)]="usuario.senha" name="perfil" type="password">
+                    </mat-form-field>
+                </td>
             </tr>
         </table>
     
