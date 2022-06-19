@@ -14,7 +14,7 @@ export class ListaUsuariosComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarios = this.usuariosService.pegarTodos()
-    console.log(this.usuarios)
+    //console.log(this.usuarios)
   }
   getUsuarios() {
     return this.usuarios

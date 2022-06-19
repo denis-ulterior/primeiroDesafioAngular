@@ -38,7 +38,7 @@ export class UsuarioService {
         else {
             const index = usuarios.length
             usuarios[index] = usuario
-            console.log('grvacao')
+            console.log('gravacao')
         }
     }
 

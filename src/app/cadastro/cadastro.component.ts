@@ -18,7 +18,7 @@ export class CadastroComponent implements OnInit {
     let valorRotaAtual = this.rotaAtiva.snapshot.paramMap.get('id') as string
     if(valorRotaAtual){
       this.usuario = this.usuarioService.pegarPorId(Number(valorRotaAtual)) as Usuario
-      console.log(this.usuario)
+      //console.log(this.usuario)
     }else{
       this.usuario = {
         id:this.usuarioService.novoId(),
@@ -32,7 +32,7 @@ export class CadastroComponent implements OnInit {
         estado:'',
         perfil:''
       }
-      console.table(this.usuario)
+      //console.table(this.usuario)
     }
     
    
